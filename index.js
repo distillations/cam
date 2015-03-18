@@ -1,11 +1,13 @@
-var http = require('http')
-var url = process.argv[2]
+var express = require('express');
+var app = express();
 
-http.get(url, function(response) {
-	response.setEncoding('utf8')
-	response.on("data", function (data) {
-		console.log(data)
-	})
-}).on('error', function(e) {
-	console.log("Got error: " + e.message)
-})
+app.set('port', (process.env.PORT || 5000));
+app.use(express.static(__dirname + '/public'));
+
+app.get('/', function(request, response) {
+  response.send('Hello World!');
+});
+
+app.listen(app.get('port'), function() {
+  console.log("Node app is running at localhost:" + app.get('port'));
+});
