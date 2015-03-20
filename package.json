@@ -9,9 +9,11 @@
   "author": "cshen",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.12.3"
+    "express": "^4.12.3",
+    "http": "0.0.0",
+    "socket.io": "1.3.5"
   },
   "engines": {
-    "node": "0.12.0"
+    "node":"0.12.0"
   }
 }
